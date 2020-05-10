@@ -1,3 +1,23 @@
+# Pixel
+
+
+PNM consists three formats: PPM, PGM, PBM
+
+```text
+  P3
+  # example.ppm
+  4 4
+  15
+   0  0  0    0  0  0    0  0  0   15  0 15
+   0  0  0    0 15  7    0  0  0    0  0  0
+   0  0  0    0  0  0    0 15  7    0  0  0
+  15  0 15    0  0  0    0  0  0    0  0  0
+```
+
+Materials:
+  http://paulbourke.net/dataformats/ppm/
+
+
 
 # API: pixel
 
@@ -45,7 +65,7 @@ InvalidPNMError = object of CatchableError
 Reads PNM headers.
 
 ```nim
-proc readPNMHeader(strm: Stream): PNMHeaders {.raises: [Defect, IOError, OSError, InvalidPNMError, ValueError], tags: [ReadIOEffect].}
+proc readPNMHeader(strm: Stream): PNMHeaders {.raises: [Defect, IOError, OSError, InvalidPNMError], tags: [ReadIOEffect].}
 ```
 
 ## **proc** readPNM
@@ -53,14 +73,14 @@ proc readPNMHeader(strm: Stream): PNMHeaders {.raises: [Defect, IOError, OSError
 Reads PNM.
 
 ```nim
-proc readPNM(strm: Stream): PNM {.raises: [Defect, IOError, OSError, InvalidPNMError, ValueError], tags: [ReadIOEffect].}
+proc readPNM(strm: Stream): PNM {.raises: [Defect, IOError, OSError, InvalidPNMError], tags: [ReadIOEffect].}
 ```
 
 ## **proc** readPNM
 
 
 ```nim
-proc readPNM(src: string): PNM {.inline, raises: [Defect, IOError, OSError, InvalidPNMError, ValueError], tags: [ReadIOEffect].}
+proc readPNM(src: string): PNM {.inline, raises: [Defect, IOError, OSError, InvalidPNMError], tags: [ReadIOEffect].}
 ```
 
 ## **proc** write

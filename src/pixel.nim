@@ -1,7 +1,7 @@
 import streams, strutils, strformat, bio
 
 
-## PNM consists three formats: PPM
+## PNM consists three formats: PPM, PGM, PBM
 ## .. code-block:: Text
 ##   P3
 ##   # example.ppm
