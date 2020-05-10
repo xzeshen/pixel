@@ -62,7 +62,10 @@ proc readPNMNumber(strm: Stream): int {.inline.} =
     s.add strm.readChar
 
   if s.len != 0:
-    result = parseInt(s)
+    try:
+      result = parseInt(s)
+    except ValueError:
+      raise newException(InvalidPNMError, "Invalid PNM format.")
   else:
     raise newException(InvalidPNMError, "Invalid PNM format.")
 
