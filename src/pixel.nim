@@ -27,13 +27,13 @@ type
     P1, P2, P3, P4, P5, P6
 
   PNMHeaders* = object
-    kind: PNMKind
-    width, height: Natural
-    maxVal: uint16 # The maximum color value
+    kind*: PNMKind
+    width*, height*: Natural
+    maxVal*: uint16 # The maximum color value
 
   PNM* = object
-    headers: PNMHeaders
-    data: seq[uint16]
+    headers*: PNMHeaders
+    data*: seq[uint16]
 
   InvalidPNMError* = object of CatchableError ## Invalid PNM format.
 
